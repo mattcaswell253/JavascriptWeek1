@@ -1,7 +1,7 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctor = function(name) {
-  $('#solution').append("<li>Doctors name:" + name + "<li>" );
+  $('#solution').append("<li>Doctors name:" + name + "</li>" );
 };
 
 $(document).ready(function() {
@@ -10,7 +10,7 @@ $(document).ready(function() {
   $('#doctor-form').submit(function(event) {
     event.preventDefault();
     var issue = $('#issue').val();
-    newDoctor.getDoctors(issue);
+    newDoctor.getDoctors(issue, displayDoctor);
     $('#issue').val("");
 
   });
